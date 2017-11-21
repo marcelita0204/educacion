@@ -1,0 +1,42 @@
+{% extends 'appUniversidad/base.html' %}
+
+{% block contenido %}
+<form class="" action="" method="post">{% csrf_token %}
+  <h1>Contenido Programa:</h1>
+  <div class="block">
+      <div class="table-responsive">
+        <p>Nombre: <input name="nombre" value="{{ contenidoprograma.nombre|escape }}" > </p>
+        <p>Tiempo: <input name="tiempo" value="{{ contenidoprograma.tiempo|escape }}" > </p>
+        <p>Programa Curricular:
+          <select name="programacurricular">
+            {% with value=programacurricular.value %}
+                {% for object in programacurricular %}
+                    <option
+                        value="{{ object.id }}"
+                        {% if object.id == contenidoprograma.programacurricular.id %}selected="selected"{% endif %}>
+                        {{ object.nombre }}
+                    </option>
+               {% endfor %}
+            {% endwith %}
+          </select>
+        </p>
+        <p>Facultad:
+          <select name="facultad">
+            {% with value=facultad.value %}
+                {% for object in facultad %}
+                    <option
+                        value="{{ object.id }}"
+                        {% if object.id == contenidoprograma.facultad.id %}selected="selected"{% endif %}>
+                        {{ object.nombre }}
+                    </option>
+               {% endfor %}
+            {% endwith %}
+          </select>
+        </p>
+        <p>
+            <input type='submit' name="" value="Guardar">
+        </p>
+      </div>
+  </div>
+</form>
+{% endblock %}

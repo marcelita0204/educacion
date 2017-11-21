@@ -1,0 +1,16 @@
+{% extends 'appUniversidad/base.html' %}
+
+{% block contenido %}
+<h1>Contenido Programa:</h1>
+<div class="block">
+    <div class="table-responsive">
+      <p>Nombre: <i>{{ contenidoprograma.nombre }}</i></p>
+      <p>Tiempo: <i>{{ contenidoprograma.tiempo }}</i></p>
+      <p>Programa Curricular: <i>{{ contenidoprograma.programacurricular.nombre }}</i></p>
+      <p>Facultad: <i>{{ contenidoprograma.facultad.nombre }}</i></p>
+      <p>
+          <a href="{% url 'contenidosprogramasList' %}">Regresar</a>
+      </p>
+    </div>
+</div>
+{% endblock %}

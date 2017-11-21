@@ -1,0 +1,16 @@
+{% extends 'appUniversidad/base.html' %}
+
+{% block contenido %}
+<form class="" action="" method="post">{% csrf_token %}
+  <h1>Hora:</h1>
+  <div class="block">
+      <div class="table-responsive">
+        <p>Inicio: <input name="inicio" value="{{ hora.inicio }}" > </p>
+        <p>Fin: <input name="fin" value="{{ hora.fin }}" > </p>
+        <p>
+            <input type='submit' name="" value="Guardar">
+        </p>
+      </div>
+  </div>
+</form>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'appUniversidad/base.html' %}
+
+{% block contenido %}
+<h1>Materia:</h1>
+<div class="block">
+    <div class="table-responsive">
+        <table id="general-table" class="table table-striped table-bordered table-vcenter">
+            <thead>
+                <tr>
+                    <th>Materia</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+              {% for materia in materias %}
+                <tr>
+                    <td><strong><a href="{% url "materiasdetailview" materia.id %}">{{materia.nombre}}</a></strong></td>
+                    <td><a href="{% url "materiasedit" materia.id %}">Editar</a></td> |
+                    <td><a href="{% url "materiasdelete" materia.id %}">Borrar</a></td>
+                </tr>
+              {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'appUniversidad/base.html' %}
+
+{% block contenido %}
+<h1>Horas:</h1>
+<div class="block">
+    <div class="table-responsive">
+        <table id="general-table" class="table table-striped table-bordered table-vcenter">
+            <thead>
+                <tr>
+                    <th>Hora</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+              {% for hora in horas %}
+                <tr>
+                    <td><strong><a href="{% url "horasdetailview" hora.id %}">{{hora.inicio}} - {{hora.fin}}</a></strong></td>
+                    <td><a href="{% url "horasedit" hora.id %}">Editar</a></td> |
+                    <td><a href="{% url "horasdelete" hora.id %}">Borrar</a></td>
+                </tr>
+              {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,170 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+
+        <title>Educacion</title>
+
+        <meta name="description" content="AppUI is a Web App Bootstrap Admin Template created by pixelcave and published on Themeforest">
+        <meta name="author" content="pixelcave">
+        <meta name="robots" content="noindex, nofollow">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0">
+
+        <link rel="shortcut icon" href="{% static 'appUniversidad/img/favicon.png' %}">
+        <link rel="apple-touch-icon" href="{% static 'appUniversidad/img/icon57.png' %}" sizes="57x57">
+        <link rel="apple-touch-icon" href="{% static 'appUniversidad/img/icon72.png' %}" sizes="72x72">
+        <link rel="apple-touch-icon" href="{% static 'appUniversidad/img/icon76.png' %}" sizes="76x76">
+        <link rel="apple-touch-icon" href="{% static 'appUniversidad/img/icon114.png' %}" sizes="114x114">
+        <link rel="apple-touch-icon" href="{% static 'appUniversidad/img/icon120.png' %}" sizes="120x120">
+        <link rel="apple-touch-icon" href="{% static 'appUniversidad/img/icon144.png' %}" sizes="144x144">
+        <link rel="apple-touch-icon" href="{% static 'appUniversidad/img/icon152.png' %}" sizes="152x152">
+        <link rel="apple-touch-icon" href="{% static 'appUniversidad/img/icon180.png' %}" sizes="180x180">
+        <link rel="stylesheet" href="{% static 'appUniversidad/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'appUniversidad/css/plugins.css' %}">
+        <link rel="stylesheet" href="{% static 'appUniversidad/css/main.css' %}">
+        <link rel="stylesheet" href="{% static 'appUniversidad/css/themes.css' %}">
+
+        <script src="{% static 'appUniversidad/js/vendor/modernizr-2.8.3.min.js' %}"></script>
+    </head>
+    <body>
+        <div id="page-wrapper" class="page-loading">
+            <div id="page-container" class="header-fixed-top sidebar-visible-lg-full">
+                <div id="sidebar-alt" tabindex="-1" aria-hidden="true">
+                    <a href="javascript:void(0)" id="sidebar-alt-close" onclick="App.sidebar('toggle-sidebar-alt');"><i class="fa fa-times"></i></a>
+                </div>
+                <div id="sidebar">
+                    <div id="sidebar-brand" class="themed-background">
+                        <a href="home.html" class="sidebar-title">
+                            <i class="fa fa-cube"></i> <span class="sidebar-nav-mini-hide">App<strong>UI</strong></span>
+                        </a>
+                    </div>
+                    <div id="sidebar-scroll">
+                        <div class="sidebar-content">
+                            <!-- Sidebar Navigation -->
+                            <ul class="sidebar-nav">
+                                <li>
+                                    <a href="home.html" class=" active"><i class="gi gi-compass sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Dashboard</span></a>
+                                </li>
+                                <li class="sidebar-separator">
+                                    <i class="fa fa-ellipsis-h"></i>
+                                </li>
+                                <li>
+                                    <a href="#" class="sidebar-nav-menu"><i class="fa fa-chevron-left sidebar-nav-indicator sidebar-nav-mini-hide"></i><i class="fa fa-rocket sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Programa Curricular</span></a>
+                                    <ul>
+                                        <li>
+						                                <a href="{% url 'crear-programacurricular' %}">Crear Programa Curricular</a>
+                                            <a href="{% url 'programascurricularesList' %}">Programas Curriculares</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#" class="sidebar-nav-menu"><i class="fa fa-chevron-left sidebar-nav-indicator sidebar-nav-mini-hide"></i><i class="fa fa-rocket sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Facultad</span></a>
+                                    <ul>
+                                        <li>
+                                            <a href="{% url 'crear-facultad' %}">Crear Facultad</a>
+                                            <a href="{% url 'facultadesList' %}">Facultades</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#" class="sidebar-nav-menu"><i class="fa fa-chevron-left sidebar-nav-indicator sidebar-nav-mini-hide"></i><i class="fa fa-rocket sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Contenido Programa</span></a>
+                                    <ul>
+                                        <li>
+                                            <a href="{% url 'crear-ContenidoPrograma' %}">Crear Contenido Programa</a>
+                                            <a href="{% url 'contenidosprogramasList' %}">Contenidos Programas</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#" class="sidebar-nav-menu"><i class="fa fa-chevron-left sidebar-nav-indicator sidebar-nav-mini-hide"></i><i class="fa fa-rocket sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Materia</span></a>
+                                    <ul>
+                                        <li>
+                                            <a href="{% url 'crear-materia' %}">Crear Materia</a>
+                                            <a href="{% url 'materiasList' %}">Materias</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#" class="sidebar-nav-menu"><i class="fa fa-chevron-left sidebar-nav-indicator sidebar-nav-mini-hide"></i><i class="fa fa-rocket sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Hora</span></a>
+                                    <ul>
+                                        <li>
+                                            <a href="{% url 'crear-hora' %}">Crear Hora</a>
+                                            <a href="{% url 'horasList' %}">Horas</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#" class="sidebar-nav-menu"><i class="fa fa-chevron-left sidebar-nav-indicator sidebar-nav-mini-hide"></i><i class="fa fa-rocket sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Sede</span></a>
+                                    <ul>
+                                        <li>
+                                            <a href="{% url 'crear-sede' %}">Crear Sede</a>
+                                            <a href="{% url 'sedesList' %}">Sedes</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#" class="sidebar-nav-menu"><i class="fa fa-chevron-left sidebar-nav-indicator sidebar-nav-mini-hide"></i><i class="fa fa-rocket sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Horario</span></a>
+                                    <ul>
+                                        <li>
+                                            <a href="{% url 'crear-horario' %}">Crear Horario</a>
+                                            <a href="{% url 'horariosList' %}">Horarios</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="main-container">
+
+                    <header class="navbar navbar-inverse navbar-fixed-top">
+                        <!-- Left Header Navigation -->
+                        <ul class="nav navbar-nav-custom">
+                            <!-- Main Sidebar Toggle Button -->
+                            <li>
+                                <a href="javascript:void(0)" onclick="App.sidebar('toggle-sidebar');">
+                                    <i class="fa fa-ellipsis-v fa-fw animation-fadeInRight" id="sidebar-toggle-mini"></i>
+                                    <i class="fa fa-bars fa-fw animation-fadeInRight" id="sidebar-toggle-full"></i>
+                                </a>
+                            </li>
+                            <li class="hidden-xs animation-fadeInQuick">
+                                <a href="{% url 'home' %}"><strong>Inicio</strong></a>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav-custom pull-right">
+                            <li class="dropdown">
+                                <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+                                    <img src="{% static 'appUniversidad/img/placeholders/avatars/avatar9.jpg' %}" alt="avatar">
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li>
+                                        <a href="{% url 'logout' %}">
+                                            <i class="fa fa-power-off fa-fw pull-right"></i>
+                                            Salir
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </header>
+                    <div id="page-content">
+                      {% block contenido %}
+                      {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script>!window.jQuery && document.write(decodeURI('%3Cscript src="js/vendor/jquery-2.1.1.min.js"%3E%3C/script%3E'));</script>
+
+        <!-- Bootstrap.js, Jquery plugins and Custom JS code -->
+        <script src="{% static 'appUniversidad/js/vendor/bootstrap.min.js' %}"></script>
+        <script src="{% static 'appUniversidad/js/plugins.js' %}"></script>
+        <script src="{% static 'appUniversidad/js/app.js' %}"></script>
+
+        <!-- Load and execute javascript code used only in this page -->
+        <script src="{% static 'appUniversidad/js/pages/readyDashboard.js' %}"></script>
+        <script>$(function(){ ReadyDashboard.init(); });</script>
+    </body>
+</html>

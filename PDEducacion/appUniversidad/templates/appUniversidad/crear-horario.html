@@ -1,0 +1,53 @@
+{% extends 'appUniversidad/base.html' %}
+
+{% block contenido %}
+<form class="" action="" method="post">{% csrf_token %}
+  <h1>Horario:</h1>
+  <div class="block">
+      <div class="table-responsive">
+        <p>Materia:
+          <select name="materia">
+            {% with value=materia.value %}
+                {% for object in materia %}
+                    <option
+                        value="{{ object.id }}"
+                        {% if object.id == horario.materia.id %}selected="selected"{% endif %}>
+                        {{ object.nombre }}
+                    </option>
+               {% endfor %}
+            {% endwith %}
+          </select>
+        </p>
+        <p>Sede:
+          <select name="sede">
+            {% with value=sede.value %}
+                {% for object in sede %}
+                    <option
+                        value="{{ object.id }}"
+                        {% if object.id == horario.sede.id %}selected="selected"{% endif %}>
+                        {{ object.nombre }}
+                    </option>
+               {% endfor %}
+            {% endwith %}
+          </select>
+        </p>
+        <p>Hora:
+          <select name="hora">
+            {% with value=hora.value %}
+                {% for object in hora %}
+                    <option
+                        value="{{ object.id }}"
+                        {% if object.id == horario.hora.id %}selected="selected"{% endif %}>
+                        {{ object.inicio }} - {{ object.fin }}
+                    </option>
+               {% endfor %}
+            {% endwith %}
+          </select>
+        </p>
+        <p>
+            <input type='submit' name="" value="Guardar">
+        </p>
+      </div>
+  </div>
+</form>
+{% endblock %}

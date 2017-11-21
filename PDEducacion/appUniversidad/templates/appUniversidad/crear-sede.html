@@ -1,0 +1,15 @@
+{% extends 'appUniversidad/base.html' %}
+
+{% block contenido %}
+<form class="" action="" method="post">{% csrf_token %}
+  <h1>Sede:</h1>
+  <div class="block">
+      <div class="table-responsive">
+        <p>Nombre: <input name="nombre" value="{{ sede.nombre|escape }}" > </p>
+        <p>
+            <input type='submit' name="" value="Guardar">
+        </p>
+      </div>
+  </div>
+</form>
+{% endblock %}

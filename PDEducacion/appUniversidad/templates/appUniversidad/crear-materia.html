@@ -1,0 +1,28 @@
+{% extends 'appUniversidad/base.html' %}
+
+{% block contenido %}
+<form class="" action="" method="post">{% csrf_token %}
+  <h1>Materia:</h1>
+  <div class="block">
+      <div class="table-responsive">
+        <p>Nombre: <input name="nombre" value="{{ materia.nombre}}" > </p>
+        <p>Contenido Programa:
+          <select name="contenidoprograma">
+            {% with value=contenidoprograma.value %}
+              {% for object in contenidoprograma %}
+                  <option
+                      value="{{ object.id }}"
+                      {% if object.id == materia.contenidoprograma.id %}selected="selected"{% endif %}>
+                      {{object.nombre}}
+                  </option>
+             {% endfor %}
+            {% endwith %}
+          </select>
+        </p>
+        <p>
+            <input type='submit' name="" value="Guardar">
+        </p>
+      </div>
+  </div>
+</form>
+{% endblock %}
