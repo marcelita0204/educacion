@@ -14,9 +14,9 @@ class AplicacionSerializer(serializers.ModelSerializer):
 class PermisoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Permiso
-        fields = ('nombre', 'aplicacion')
+        fields = ('id','nombre')
 
 class RolSerializer(serializers.ModelSerializer):
     class Meta:
         model = Rol
-        fields = ('nombre', 'permiso')
+        fields = ('id','nombre', 'aplicacion', 'permiso')

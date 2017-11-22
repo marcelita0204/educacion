@@ -12,22 +12,15 @@ class Aplicacion(models.Model):
 
 class Permiso(models.Model):
     nombre = models.CharField(max_length=30)
-    aplicacion = models.ForeignKey(
-        Aplicacion,
-        on_delete = models.CASCADE
-    )
-    fecha_creacion = models.DateTimeField(
-        auto_now_add = True
-    )
-    fecha_actualizacion= models.DateTimeField(
-        auto_now = True
-    )
-
     def __str__(self):
         return self.nombre
 
 class Rol(models.Model):
     nombre = models.CharField(max_length=30)
+    aplicacion = models.ForeignKey(
+        Aplicacion,
+        on_delete = models.CASCADE
+    )
     permiso = models.ForeignKey(
         Permiso,
         on_delete = models.CASCADE

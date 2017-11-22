@@ -15,20 +15,14 @@ class AplicacionAdmin(admin.ModelAdmin):
 @admin.register(Permiso)
 class PermisoAdmin(admin.ModelAdmin):
     list_display = [
-        'nombre',
-        'aplicacion',
-        'fecha_creacion',
-        'fecha_actualizacion'
-    ]
-    search_fields = [
         'nombre'
     ]
-    list_filter = ['aplicacion']
 
 @admin.register(Rol)
 class RolAdmin(admin.ModelAdmin):
     list_display = [
         'nombre',
+        'aplicacion',
         'permiso',
         'fecha_creacion',
         'fecha_actualizacion'
@@ -36,4 +30,4 @@ class RolAdmin(admin.ModelAdmin):
     search_fields = [
         'nombre'
     ]
-    list_filter = ['permiso']
+    list_filter = ['aplicacion','permiso']
