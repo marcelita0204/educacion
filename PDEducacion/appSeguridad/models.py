@@ -6,7 +6,7 @@ from django.core.exceptions import ValidationError
 class Aplicacion(models.Model):
     nombre = models.CharField(max_length=30)
 
-    def _str_(self):
+    def __str__(self):
         return self.nombre
 
 
@@ -23,7 +23,7 @@ class Permiso(models.Model):
         auto_now = True
     )
 
-    def _str_(self):
+    def __str__(self):
         return self.nombre
 
 class Rol(models.Model):
@@ -39,5 +39,5 @@ class Rol(models.Model):
         auto_now = True
     )
 
-    def _str_(self):
+    def __str__(self):
         return self.nombre
